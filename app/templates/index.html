@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dating App Simulation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Dating App Simulation</h1>
+        <hr class="divider">
+        <p class="description">I made this app after watching this video of <strong>Memeable Data</strong>: 
+            <a href="https://www.youtube.com/watch?v=x3lypVnJ0HM">Why Men Get So Few Matches on Dating Apps</a>. This video is super well made. 
+            This is a prime example of how data can explain different phenomenons.
+        </p>
+        
+        <div class="params">
+            <div class="men-params">
+                <h2>Men Parameters</h2>
+                <label for="men-users">Amount of Users</label>
+                <input type="number" id="men-users" placeholder="Amount of Users" value="1400" title="Set the number of male users in the simulation">
+                
+                <label for="men-swipes">Amount of Swipes</label>
+                <input type="number" id="men-swipes" placeholder="Amount of Swipes per day" value="200" title="Set the number of swipes for male users">
+                
+                <label for="men-formula">Formula for Attractiveness</label>
+                <input type="text" id="men-formula" placeholder="Formula" value="x^5.67" title="Set the formula to calculate attractiveness for male users">
+            </div>
+            
+            <div class="women-params">
+                <h2>Women Parameters</h2>
+                <label for="women-users">Amount of Users</label>
+                <input type="number" id="women-users" placeholder="Amount of Users" value="600" title="Set the number of female users in the simulation">
+                
+                <label for="women-swipes">Amount of Swipes</label>
+                <input type="number" id="women-swipes" placeholder="Amount of Swipes per day" value="200" title="Set the number of swipes for female users">
+                
+                <label for="women-formula">Formula for Attractiveness</label>
+                <input type="text" id="women-formula" placeholder="Formula" value="x^1.22" title="Set the formula to calculate attractiveness for female users">
+            </div>
+        </div>
+        
+        <button id="run-simulation" title="Click to run the simulation with the given parameters">Run Simulation</button>
+        <span id="status"></span>
+
+        
+        <div id="results">
+            <div id="stats-table"></div>
+            <div id="plots">
+                <img id="functions-plot" src="" alt="Functions Plot" style="display:none;">
+                <img id="distributions-plot" src="" alt="Distributions Plot" style="display:none;">
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
